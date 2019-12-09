@@ -7,7 +7,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: "http://34.94.33.4/api/xjoin?_join=u.usuarios,_j,r.registros&_on1=(u.reg_hash,eq,r.reg_hash)&_fields=r.aula,r.reg_hash,u.nombre,r.fecha,r.estatus"
+        url: "http://34.94.33.4/api/xjoin?_join=u.usuarios,_j,r.registros&_on1=(u.reg_hash,eq,r.reg_hash)&_fields=r.aula,r.reg_hash,u.nombre,r.fecha,r.estatus&_sort=-r.fecha"
     }).then(function(data) {
         $.each(data, function(i, d) {
             var estado = "";

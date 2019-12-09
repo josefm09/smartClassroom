@@ -17,7 +17,7 @@ $(document).ready(function() {
             }else{
                 estado = "Salió: "
             }
-            $('#dataTable tbody').append('<tr><td>' + d.r_aula + '</td><td>' + d.r_reg_hash + '</td><td>' + d.u_nombre + '</td><td>' + estado + fecha.toLocaleString('en-GB', { timeZone: 'UTC' }) + '</td></tr>' );
+            $('#dataTable tbody').append('<tr><td>' + d.r_aula + '</td><td>' + d.r_reg_hash + '</td><td>' + d.u_nombre + '</td><td>' + estado + fecha.toLocaleString('en-GB', { timeZone: 'GMT-7' }) + '</td></tr>' );
         });
     });
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
         }).then(function(data) {
             $.each(data, function(i, d) {
                 var fecha = new Date(d.fecha_reg);
-                $('#dataMaestro tbody').append('<tr><td>' + d.nombre + '</td><td>' + d.area + '</td><td>' + d.reg_hash + '</td><td>' + fecha.toLocaleString('en-GB', { timeZone: 'UTC' }) + '</td></tr>' );
+                $('#dataMaestro tbody').append('<tr><td>' + d.nombre + '</td><td>' + d.area + '</td><td>' + d.reg_hash + '</td><td>' + fecha.toLocaleString('en-GB', { timeZone: 'GMT-7' }) + '</td></tr>' );
             });
         }); 
     });

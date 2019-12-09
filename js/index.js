@@ -34,8 +34,8 @@ $(document).ready(function() {
             url: "http://34.94.33.4/api/usuarios",
             data: { 
                     "nombre" : nombre,
-                    "area" : distrito,
-                    "reg_hash" : ciudad      
+                    "area" : area,
+                    "reg_hash" : hash      
             },
             success: alert("Maestro agregado"),
             dataType: "json"

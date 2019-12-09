@@ -1,13 +1,13 @@
 $(document).ready(function() {
     
     $.ajax({
-        url: "http://localhost:3000/api/usuarios/count"
+        url: "http://localhost/api/usuarios/count"
     }).then(function(data) {
         $('#clientes').prepend(data[0].no_of_rows);
     });
 
     $.ajax({
-        url: "http://localhost:3000/api/xjoin?_join=u.usuarios,_j,r.registros&_on1=(u.reg_hash,eq,r.reg_hash)&_fields=r.aula,r.reg_hash,u.nombre,r.fecha,r.estatus"
+        url: "http://localhost/api/xjoin?_join=u.usuarios,_j,r.registros&_on1=(u.reg_hash,eq,r.reg_hash)&_fields=r.aula,r.reg_hash,u.nombre,r.fecha,r.estatus"
     }).then(function(data) {
         $.each(data, function(i, d) {
             var estado = "";

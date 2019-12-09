@@ -21,5 +21,26 @@ $(document).ready(function() {
         });
     });
 
+    $('#agregarMaestro').click(function(){
+        $('#modal').modal('show'); 
+    });
+
+    $('#agregar').click(function(){
+        var nombre = $('#txtNombre').val();
+        var area = $('#txtArea').val();
+        var hash = $('#txtHash').val();
+        $.ajax({
+            type: "POST",
+            url: "http://34.94.33.4/api/usuarios",
+            data: { 
+                    "nombre" : nombre,
+                    "area" : distrito,
+                    "reg_hash" : ciudad      
+            },
+            success: alert("Maestro agregado"),
+            dataType: "json"
+        });
+        $('#modal').modal('hide');
+    });
 
 });

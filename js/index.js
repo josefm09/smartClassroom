@@ -50,7 +50,7 @@ $(document).ready(function() {
         }).then(function(data) {
             $.each(data, function(i, d) {
                 var fecha = new Date(d.fecha_reg);
-                $('#dataMaestro tbody').append('<tr><td>' + nombre + '</td><td>' + area + '</td><td>' + reg_hash + '</td><td>' + fecha.toLocaleString('en-GB', { timeZone: 'UTC' }) + '</td></tr>' );
+                $('#dataMaestro tbody').append('<tr><td>' + d.nombre + '</td><td>' + d.area + '</td><td>' + d.reg_hash + '</td><td>' + fecha.toLocaleString('en-GB', { timeZone: 'UTC' }) + '</td></tr>' );
             });
         }); 
     });

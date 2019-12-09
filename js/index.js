@@ -43,4 +43,16 @@ $(document).ready(function() {
         $('#modal').modal('hide');
     });
 
+    $('#informacion').click(function(){
+        $('#modal2').modal('show');
+        $.ajax({
+            url: "http://34.94.33.4/api/usuarios"
+        }).then(function(data) {
+            $.each(data, function(i, d) {
+                var fecha = new Date(d.fecha_reg);
+                $('#dataMaestro tbody').append('<tr><td>' + nombre + '</td><td>' + area + '</td><td>' + reg_hash + '</td><td>' + fecha.toLocaleString('en-GB', { timeZone: 'UTC' }) + '</td></tr>' );
+            });
+        }); 
+    });
+    
 });
